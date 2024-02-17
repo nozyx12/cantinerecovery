@@ -1,0 +1,29 @@
+plugins {
+    id "java-library"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+}
+
+group = "fr.nozyx.cantinerecovery"
+version = "1.0.0"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "commons-io:commons-io:2.15.1"
+    implementation "com.google.zxing:core:3.5.3"
+    implementation "com.google.zxing:javase:3.5.3"
+    implementation "com.sshtools:two-slices:0.9.3"
+}
+
+jar {
+    manifest {
+        attributes (
+                "Version": version,
+                "Main-Class": "fr.nozyx.cantinerecovery.Main"
+        )
+    }
+
+    compileJava.options.encoding = "UTF-8"
+}
